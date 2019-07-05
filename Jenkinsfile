@@ -13,7 +13,7 @@ def Creds	= "2dfd9d0d-a300-49ee-aaaf-0a3efcaa5279"
   }
 
   stage('RUN Unit Tests'){
-    dir ('./app') { 
+    dir ('./app/') { 
       sh "npm install"
       sh "npm test"
     }
