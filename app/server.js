@@ -1,6 +1,6 @@
 var restify = require("restify");
 var server = restify.createServer();
-var pkg = require("package.json");
+var pkg = require("./package.json");
 var rootResponder = require("./routes/root");
 
 server.get("/", rootResponder);
