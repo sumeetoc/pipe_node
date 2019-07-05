@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node_app-kubernetes
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node_app-kubernetes
+  template:
+    metadata:
+      labels:
+        app: node_app-kubernetes
+    spec:
+      containers:
+      - name: node_app-kubernetes
+        image: "{{ .Values.image.repository }}"
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
