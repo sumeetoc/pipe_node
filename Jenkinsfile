@@ -28,7 +28,7 @@ def Creds	= "2dfd9d0d-a300-49ee-aaaf-0a3efcaa5279"
   }
 
   stage('Deploy on K8s'){
-     sh "helm upgrade --wait --recreate-pods --namespace={{ Namespace }} --set image.repository={{ imageTag }} --set namespace={{ Namespace }} ../app"
+     sh "helm upgrade --wait --recreate-pods --namespace={{ Namespace }} --set image.repository={{ imageTag }} --set namespace={{ Namespace }} node_app app/"
     }
   } catch (err) {
       currentBuild.result = 'FAILURE'
